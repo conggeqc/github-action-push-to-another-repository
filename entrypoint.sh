@@ -58,6 +58,9 @@ ls -la "$CLONE_DIR"
 #clone  java sdk (DESTINATION)
 echo "clone  java sdk"
 git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$TARGET_GITHUB_USERNAME_JAVA_SDK:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_REPOSITORY_NAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-sdk-java
+mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java/.git"
+
+
 ls -la "$CLONE_DIR"
 
 #download  snips
@@ -74,27 +77,10 @@ snips -f $CLONE_DIR/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t $CLO
 
 
 # push  java sdk
+echo "push  java sdk"
 
-
-
-# clone DESTINATION_REPOSITORY
-{
-	git clone --single-branch --branch "$TARGET_BRANCH" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" "$CLONE_DIR"
-} || {
-	echo "::error::Could not clone the destination repository. Command:"
-	echo "::error::git clone --single-branch --branch $TARGET_BRANCH https://$USER_NAME:the_api_token@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git $CLONE_DIR"
-	echo "::error::(Note that the USER_NAME and API_TOKEN is redacted by GitHub)"
-	echo "::error::Please verify that the target repository exist AND that it contains the destination branch name, and is accesible by the API_TOKEN_GITHUB"
-	exit 1
-
-}
 ls -la "$CLONE_DIR"
-
-TEMP_DIR=$(mktemp -d)
-# This mv has been the easier way to be able to remove files that were there
-# but not anymore. Otherwise we had to remove the files from "$CLONE_DIR",
-# including "." and with the exception of ".git/"
-mv "$CLONE_DIR/.git" "$TEMP_DIR/.git"
+ 
 
 # $TARGET_DIRECTORY is '' by default
 ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/$TARGET_DIRECTORY/"
@@ -111,7 +97,7 @@ ls -al
 echo "[+] Listing root Location"
 ls -al /
 
-mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
+mv "$TEMP_DIR/qingcloud-sdk-java/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
 
 echo "[+] List contents of $SOURCE_DIRECTORY"
 ls "$SOURCE_DIRECTORY"
@@ -156,5 +142,6 @@ echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 #git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
 
+git push "https://$TARGET_GITHUB_USERNAME_JAVA_SDK:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
  
 
