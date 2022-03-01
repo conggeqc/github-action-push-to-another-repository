@@ -13,6 +13,6 @@ inputs:
     default: 'conggeqc'
  
   api-specs-repository-name:
-    description: '[Optional] Username/organization for the api-specs repository name'
+    description: 'the api-specs repository name'
     required: true
     default: 'qingcloud-api-specs'
