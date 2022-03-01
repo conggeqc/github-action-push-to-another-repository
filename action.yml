@@ -48,17 +48,7 @@ inputs:
     description: '[Optional] The directory to wipe and replace in the target repository'
     default: ''
     required: false
-   
-    
-  destination-github-username-sdk-java:
-    description: '[Optional] Username/organization for the destination repository'
-    default: 'conggeqc'
-    required: false
-  destination-repository-name-sdk-java:
-    description: 'Destination repository name'
-    required: false
-    default: 'qingcloud-sdk-java'
-    
+
     
 runs:
   using: docker
@@ -75,12 +65,13 @@ runs:
     - '${{ inputs.target-branch }}'
     - '${{ inputs.commit-message }}'
     - '${{ inputs.target-directory }}'
-    
     - '${{ inputs.snips-tool-file-url }}'
-    
     - '${{ inputs.api-specs-github-username }}'
     - '${{ inputs.api-specs-repository-name }}'
     - '${{ inputs.api-specs-target-branch }}'
+    - '${{ inputs.java-sdk-github-username }}'
+    - '${{ inputs.java-sdk-repository-name }}'
+    - '${{ inputs.java-sdk-target-branch }}'
     
 branding:
   icon: git-commit
