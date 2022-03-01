@@ -82,11 +82,6 @@ runs:
     - '${{ inputs.api-specs-repository-name }}'
     - '${{ inputs.api-specs-target-branch }}'
     
-    
-    - '${{ inputs.java-sdk-github-username }}'
-    - '${{ inputs.java-sdk-repository-name }}'
-    - '${{ inputs.java-sdk-target-branch }}'
-    
 branding:
   icon: git-commit
   color: green
