@@ -1,0 +1,19 @@
+name: snips apisecs to sdk, java sdk config
+description: >-
+  snips apisecs to java sdk
+inputs:
+ 
+  java-sdk-github-username:
+    description: 'Optional] Username/organization for the api-specs  java sdk repository'
+    required: true
+    default: 'conggeqc'
+ 
+  java-sdk-repository-name:
+    description: 'the java sdk repository name'
+    required: true
+    default: 'qingcloud-api-specs'
+
+  java-sdk-target-branch:
+    description: 'the java sdk target branch name'
+    required: true
+    default: 'master'
