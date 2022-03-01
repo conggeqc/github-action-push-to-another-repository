@@ -65,7 +65,7 @@ echo "download snips"
 cd $CLONE_DIR
 wget $SNIPS_TOOL_FILE_URL
 tar -xvf snips-v0.3.6-linux_amd64.tar.gz
-chmod 777 snips
+chmod -R 777 snips
 ls -la "$CLONE_DIR"
 #cp snips /usr/local/bin/snips
 
