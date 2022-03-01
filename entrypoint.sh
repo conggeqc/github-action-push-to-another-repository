@@ -69,6 +69,13 @@ ls -la "$CLONE_DIR"
 #ls -la "$CLONE_DIR"
 #cp snips /usr/local/bin/snips
 
+# install snips
+echo "install snips"
+cd $CLONE_DIR
+git clone git@github.com:yunify/snips.git
+glide install
+make install
+
 
 # snips api-specs to java sdk
 echo " snips api-specs to java sdk"
