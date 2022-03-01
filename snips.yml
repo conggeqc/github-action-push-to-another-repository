@@ -10,7 +10,7 @@ inputs:
   api-specs-github-username:
     description: 'Optional] Username/organization for the api-specs  java sdk repository'
     required: true
-    default: 'yunify'
+    default: 'conggeqc'
  
   api-specs-repository-name:
     description: '[Optional] Username/organization for the api-specs repository name'
