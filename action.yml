@@ -48,7 +48,18 @@ inputs:
     description: '[Optional] The directory to wipe and replace in the target repository'
     default: ''
     required: false
-        
+   
+    
+  destination-github-username-sdk-java:
+    description: '[Optional] Username/organization for the destination  java sdk repository'
+    default: 'yunify'
+    required: false
+  destination-repository-username:
+    description: '[Optional] Username/organization for the destination repository'
+    required: false
+    default: 'qingcloud-sdk-java'
+    
+    
 runs:
   using: docker
   image: Dockerfile
@@ -64,6 +75,9 @@ runs:
     - '${{ inputs.target-branch }}'
     - '${{ inputs.commit-message }}'
     - '${{ inputs.target-directory }}'
+    
+    - '${{ inputs.destination-github-username-sdk-java }}'
+    - '${{ inputs.destination-repository-username }}'
 branding:
   icon: git-commit
   color: green
