@@ -76,8 +76,10 @@ runs:
     - '${{ inputs.commit-message }}'
     - '${{ inputs.target-directory }}'
     
+    - '${{ inputs.snips-tool-file-url }}'
     - '${{ inputs.destination-github-username-sdk-java }}'
     - '${{ inputs.destination-repository-name }}'
+    
 branding:
   icon: git-commit
   color: green
