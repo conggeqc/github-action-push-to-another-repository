@@ -1,0 +1,18 @@
+name: snips apisecs to sdk
+description: >-
+  snips apisecs to sdk
+inputs:
+  snips-tool-file-url:
+    description: snips tool file url
+    required: true
+    default: 'https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz'
+    
+  api-specs-github-username:
+    description: 'Optional] Username/organization for the api-specs  java sdk repository'
+    required: true
+    default: 'yunify'
+ 
+  api-specs-repository-name:
+    description: '[Optional] Username/organization for the api-specs repository name'
+    required: true
+    default: 'qingcloud-api-specs'
