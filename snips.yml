@@ -6,7 +6,7 @@ inputs:
     description: snips tool file url
     required: true
     default: 'https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz'
-    
+        
   api-specs-github-username:
     description: 'Optional] Username/organization for the api-specs  java sdk repository'
     required: true
@@ -16,3 +16,8 @@ inputs:
     description: 'the api-specs repository name'
     required: true
     default: 'qingcloud-api-specs'
+
+  api-specs-target-branch:
+    description: 'the api-specs target branch name'
+    required: true
+    default: 'master'
