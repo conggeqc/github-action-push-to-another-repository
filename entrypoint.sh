@@ -16,6 +16,8 @@ TARGET_BRANCH="${9}"
 COMMIT_MESSAGE="${10}"
 TARGET_DIRECTORY="${11}"
 
+SNIPS_TOOL_FILE_URL="${12}"
+
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
 	DESTINATION_REPOSITORY_USERNAME="$DESTINATION_GITHUB_USERNAME"
@@ -109,4 +111,8 @@ git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 
 echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
-git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
+#git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
+
+echo "SNIPS_TOOL_FILE_URL"
+echo $SNIPS_TOOL_FILE_URL
+
