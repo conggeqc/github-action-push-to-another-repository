@@ -23,6 +23,12 @@ TARGET_GITHUB_USERNAME_API_SPECS="${13}"
 TARGET_REPOSITORY_NAME_API_SPECS="${14}"
 TARGET_BRANCH_API_SPECS="${15}"
 
+
+TARGET_GITHUB_USERNAME_JAVA_SDK="${16}"
+TARGET_REPOSITORY_NAME_JAVA_SDK="${17}"
+TARGET_BRANCH_JAVA_SDK="${18}"
+
+
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
 	DESTINATION_REPOSITORY_USERNAME="$DESTINATION_GITHUB_USERNAME"
@@ -35,6 +41,8 @@ fi
 
 CLONE_DIR=$(mktemp -d)
 
+TEMP_DIR=$(mktemp -d)
+
 echo "[+] Cloning destination git repository $DESTINATION_REPOSITORY_NAME"
 # Setup git
 git config --global user.email "$USER_EMAIL"
@@ -43,20 +51,26 @@ git config --global user.name "$USER_NAME"
 
 
 #clone api-specs 
-
-echo clone api-specs 
-git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"
-
+echo "clone api-specs" 
+git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$TARGET_GITHUB_USERNAME_API_SPECS:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
+ls -la "$CLONE_DIR"
 
 #clone  java sdk (DESTINATION)
-
-
-
+echo "clone  java sdk"
+git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$TARGET_GITHUB_USERNAME_JAVA_SDK:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_REPOSITORY_NAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-sdk-java
+ls -la "$CLONE_DIR"
 
 #download  snips
+echo "download snips"
+cd /
+wget $SNIPS_TOOL_FILE_URL
+tar -xvf snips-v0.3.6-linux_amd64.tar.gz
+cp snips /usr/local/bin/snips
 
 
 # snips api-specs to java sdk
+echo " snips api-specs to java sdk"
+snips -f $CLONE_DIR/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t $CLONE_DIR/qingcloud-sdk-java/tmpl -o $CLONE_DIR/qingcloud-sdk-java/src/main/java/com/qingcloud/sdk/service/
 
 
 # push  java sdk
@@ -142,6 +156,5 @@ echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 #git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
 
-echo "SNIPS_TOOL_FILE_URL"
-echo $SNIPS_TOOL_FILE_URL
+ 
 
