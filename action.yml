@@ -52,7 +52,7 @@ inputs:
     
   destination-github-username-sdk-java:
     description: '[Optional] Username/organization for the destination repository'
-    default: 'yunify'
+    default: 'conggeqc'
     required: false
   destination-repository-name-sdk-java:
     description: 'Destination repository name'
