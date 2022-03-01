@@ -54,7 +54,7 @@ inputs:
     description: '[Optional] Username/organization for the destination  java sdk repository'
     default: 'yunify'
     required: false
-  destination-repository-username:
+  destination-repository-name:
     description: '[Optional] Username/organization for the destination repository'
     required: false
     default: 'qingcloud-sdk-java'
@@ -77,7 +77,7 @@ runs:
     - '${{ inputs.target-directory }}'
     
     - '${{ inputs.destination-github-username-sdk-java }}'
-    - '${{ inputs.destination-repository-username }}'
+    - '${{ inputs.destination-repository-name }}'
 branding:
   icon: git-commit
   color: green
