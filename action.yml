@@ -83,9 +83,9 @@ runs:
     - '${{ inputs.api-specs-target-branch }}'
     
     
-    - '${{ inputs.destination-github-username-sdk-java }}'
-    - '${{ inputs.destination-repository-name-sdk-java }}'
-    
+    - '${{ inputs.java-sdk-github-username }}'
+    - '${{ inputs.java-sdk-repository-name }}'
+    - '${{ inputs.java-sdk-target-branch }}'
     
 branding:
   icon: git-commit
