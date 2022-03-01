@@ -1,18 +1,15 @@
-name: snips apisecs to sdk,api-specs config
+name: apispecs config
 description: >-
   snips apisecs to sdk,api-specs config
 inputs:
-
   api-specs-github-username:
     description: 'Optional] Username/organization for the api-specs repository'
     required: true
     default: 'conggeqc'
- 
   api-specs-repository-name:
     description: 'the api-specs repository name'
     required: true
     default: 'qingcloud-api-specs'
-
   api-specs-target-branch:
     description: 'the api-specs target branch name'
     required: true
