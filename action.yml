@@ -51,11 +51,11 @@ inputs:
    
     
   destination-github-username-sdk-java:
-    description: '[Optional] Username/organization for the destination  java sdk repository'
+    description: '[Optional] Username/organization for the destination repository'
     default: 'yunify'
     required: false
-  destination-repository-name:
-    description: '[Optional] Username/organization for the destination repository'
+  destination-repository-name-sdk-java:
+    description: 'Destination repository name'
     required: false
     default: 'qingcloud-sdk-java'
     
@@ -78,7 +78,7 @@ runs:
     
     - '${{ inputs.snips-tool-file-url }}'
     - '${{ inputs.destination-github-username-sdk-java }}'
-    - '${{ inputs.destination-repository-name }}'
+    - '${{ inputs.destination-repository-name-sdk-java }}'
     
 branding:
   icon: git-commit
