@@ -13,4 +13,4 @@ inputs:
   api-specs-target-branch:
     description: 'the api-specs target branch name'
     required: true
-    default: 'master'
+    default: master
