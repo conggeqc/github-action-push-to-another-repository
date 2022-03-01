@@ -18,6 +18,11 @@ TARGET_DIRECTORY="${11}"
 
 SNIPS_TOOL_FILE_URL="${12}"
 
+
+TARGET_GITHUB_USERNAME_API_SPECS="${13}"
+TARGET_REPOSITORY_NAME_API_SPECS="${14}"
+TARGET_BRANCH_API_SPECS="${15}"
+
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
 	DESTINATION_REPOSITORY_USERNAME="$DESTINATION_GITHUB_USERNAME"
@@ -35,6 +40,30 @@ echo "[+] Cloning destination git repository $DESTINATION_REPOSITORY_NAME"
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
+
+
+#clone api-specs 
+
+echo clone api-specs 
+git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"
+
+
+#clone  java sdk (DESTINATION)
+
+
+
+
+#download  snips
+
+
+# snips api-specs to java sdk
+
+
+# push  java sdk
+
+
+
+# clone DESTINATION_REPOSITORY
 {
 	git clone --single-branch --branch "$TARGET_BRANCH" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" "$CLONE_DIR"
 } || {
