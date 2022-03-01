@@ -61,18 +61,18 @@ mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java/.git"
 ls -la "$CLONE_DIR"
 
 #download  snips
-echo "download snips"
-cd $CLONE_DIR
-wget $SNIPS_TOOL_FILE_URL
-tar -xvf snips-v0.3.6-linux_amd64.tar.gz
-chmod -R 777 ./snips
-ls -la "$CLONE_DIR"
+#echo "download snips"
+#cd $CLONE_DIR
+#wget $SNIPS_TOOL_FILE_URL
+#tar -xvf snips-v0.3.6-linux_amd64.tar.gz
+#chmod -R 777 ./snips
+#ls -la "$CLONE_DIR"
 #cp snips /usr/local/bin/snips
 
 
 # snips api-specs to java sdk
 echo " snips api-specs to java sdk"
-"$CLONE_DIR"/./snips -f $CLONE_DIR/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t $CLONE_DIR/qingcloud-sdk-java/tmpl -o $CLONE_DIR/qingcloud-sdk-java/src/main/java/com/qingcloud/sdk/service/
+snips -f $CLONE_DIR/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t $CLONE_DIR/qingcloud-sdk-java/tmpl -o $CLONE_DIR/qingcloud-sdk-java/src/main/java/com/qingcloud/sdk/service/
 
 
 # push  java sdk
