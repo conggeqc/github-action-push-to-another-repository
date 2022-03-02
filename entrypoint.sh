@@ -54,7 +54,7 @@ ls -la "$CLONE_DIR"
 echo "clone  java sdk"
 git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" "$CLONE_DIR"/qingcloud-sdk-java
 ls -la $CLONE_DIR/qingcloud-sdk-java/.git/
-mkdir "$TEMP_DIR/qingcloud-sdk-java"
+mkdir "$TEMP_DIR/qingcloud-sdk-java-temp"
 mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java/.git"
 
 
@@ -103,7 +103,7 @@ ls -al
 echo "[+] Listing root Location"
 ls -al /
 
-mv "$TEMP_DIR/qingcloud-sdk-java/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
+mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
 
 echo "[+] List contents of $SOURCE_DIRECTORY"
 ls "$SOURCE_DIRECTORY"
