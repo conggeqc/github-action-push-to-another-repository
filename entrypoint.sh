@@ -70,11 +70,11 @@ ls -la "$CLONE_DIR"
 #cp snips /usr/local/bin/snips
 
 # install snips
-echo "install snips"
-cd $CLONE_DIR
-git clone git@github.com:yunify/snips.git
-glide install
-make install
+#echo "install snips"
+#cd $CLONE_DIR
+#git clone git@github.com:yunify/snips.git
+#glide install
+#make install
 
 
 # snips api-specs to java sdk
@@ -126,6 +126,9 @@ fi
 echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
 cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
 cd "$CLONE_DIR"
+
+echo "add something different"
+date +%s > report.txt
 
 echo "[+] Files that will be pushed"
 ls -la
