@@ -55,7 +55,7 @@ echo "clone  java sdk"
 git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" "$CLONE_DIR"/qingcloud-sdk-java
 ls -la $CLONE_DIR/qingcloud-sdk-java/.git/
 mkdir "$TEMP_DIR/qingcloud-sdk-java-temp"
-mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java/.git"
+mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java-temp/.git"
 
 
 ls -la "$CLONE_DIR"
