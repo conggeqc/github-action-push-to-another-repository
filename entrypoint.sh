@@ -89,7 +89,7 @@ ls -la "$CLONE_DIR"
  
 
 # $TARGET_DIRECTORY is '' by default
-ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/$TARGET_DIRECTORY/"
+ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/qingcloud-sdk-java/$TARGET_DIRECTORY/"
 
 echo "[+] Deleting $ABSOLUTE_TARGET_DIRECTORY"
 rm -rf "$ABSOLUTE_TARGET_DIRECTORY"
@@ -104,7 +104,7 @@ echo "[+] Listing root Location"
 ls -al /
 
 
-#mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
+mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
 
 echo "[+] List contents of $SOURCE_DIRECTORY"
 ls "$SOURCE_DIRECTORY"
