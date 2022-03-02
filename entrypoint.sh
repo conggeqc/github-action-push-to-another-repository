@@ -46,8 +46,8 @@ git config --global user.name "$USER_NAME"
 
 
 #clone api-specs 
-echo "clone api-specs" 
-git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
+#echo "clone api-specs" 
+#git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
 ls -la "$CLONE_DIR"
 
 #clone  java sdk (DESTINATION)
