@@ -104,7 +104,7 @@ echo "[+] Listing root Location"
 ls -al /
 
 
-# mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
+#mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
 
 echo "[+] List contents of $SOURCE_DIRECTORY"
 ls "$SOURCE_DIRECTORY"
@@ -125,8 +125,8 @@ then
 fi
 
 echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
-cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
-cd "$CLONE_DIR"
+cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/qingcloud-sdk-java/$TARGET_DIRECTORY"
+cd "$CLONE_DIR"/qingcloud-sdk-java
 
 echo "add something different"
 date +%s > report.txt
