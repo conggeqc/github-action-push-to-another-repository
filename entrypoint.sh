@@ -135,7 +135,7 @@ echo "[+] Files that will be pushed"
 ls -la
 
 echo "cat git config"
-cat ./git/config
+cat .git/config
 
 ORIGIN_COMMIT="https://$GITHUB_SERVER/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 COMMIT_MESSAGE="${COMMIT_MESSAGE/ORIGIN_COMMIT/$ORIGIN_COMMIT}"
