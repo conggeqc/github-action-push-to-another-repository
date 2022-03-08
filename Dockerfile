@@ -14,5 +14,6 @@ RUN pwd
 RUN ls -alth
 #COPY snips /usr/bin/snips
 RUN chmod 0755 snips
+RUN ls -alth
 
 ENTRYPOINT ["/entrypoint.sh"]
