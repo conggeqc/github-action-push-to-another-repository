@@ -1,6 +1,8 @@
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apk add --no-cache git
+#RUN apk add --no-cache git
+RUN  apt-get install git
 
 COPY entrypoint.sh /entrypoint.sh
 
