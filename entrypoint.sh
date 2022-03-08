@@ -162,11 +162,11 @@ echo "[+] Pushing git commit"
 
 #git config remote.origin.url 'https://$USER_NAME:$API_TOKEN_GITHUB@github.com/${{ github.repository }}'
 
-git remote set-url origin "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/test.git"
-git config remote.origin.url "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/test.git"
+git remote set-url origin "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
+git config remote.origin.url "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
 
 
 #git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
-git push "https://conggeqc:$API_TOKEN_GITHUB@$GITHUB_SERVER/conggeqc/test.git" --set-upstream "api-specs-sync"
- 
+git push "https://conggeqc:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+  
 
