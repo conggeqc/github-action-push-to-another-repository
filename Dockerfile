@@ -1,5 +1,5 @@
-#FROM ubuntu:latest
-FROM alpine:latest
+FROM ubuntu:latest
+#FROM alpine:latest
 
 #RUN apk add --no-cache git
 RUN  apt-get install git
