@@ -8,9 +8,20 @@ COPY entrypoint.sh /entrypoint.sh
 RUN apt-get update --fix-missing && apt-get install -y fontconfig --fix-missing
 RUN  apt-get install -y git
 RUN  apt-get install -y wget
-RUN wget https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz  
+
+RUN wget -O - https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz | tar -C /bin/ -zxf - 
+
+
+#RUN wget -O - https://github.com/drone/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz | tar -C /bin/ -zxf - 
+#ADD url/version/cmd.tar.gz /tmp
+#RUN  tar  -C /bin/  -zxf /tmp/cmd.tar.gz && rm /tmp/cmd.tar.gz
+
+
+#RUN wget https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz  
 #RUN tar -xvf snips-v0.3.6-linux_amd64.tar.gz
-ADD snips-v0.3.6-linux_amd64.tar.gz
+
+
+#ADD snips-v0.3.6-linux_amd64.tar.gz
 RUN pwd
 RUN ls -alth
 #COPY snips /usr/bin/snips
