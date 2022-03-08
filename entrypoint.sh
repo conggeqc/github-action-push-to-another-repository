@@ -160,8 +160,13 @@ echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 #git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
 
-git config remote.origin.url 'https://$USER_NAME:$API_TOKEN_GITHUB@github.com/${{ github.repository }}'
+#git config remote.origin.url 'https://$USER_NAME:$API_TOKEN_GITHUB@github.com/${{ github.repository }}'
 
-git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+git remote set-url origin "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/test.git"
+git config remote.origin.url "https://conggeqc:$API_TOKEN_GITHUB@github.com/conggeqc/test.git"
+
+
+#git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+#git push "https://conggeqc:$API_TOKEN_GITHUB@$GITHUB_SERVER/conggeqc/test.git" --set-upstream "api-specs-sync"
  
 
