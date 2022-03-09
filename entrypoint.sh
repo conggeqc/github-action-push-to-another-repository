@@ -63,22 +63,6 @@ mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java-temp/.git"
 
 ls -la "$CLONE_DIR"
 
-#download  snips
-#echo "download snips"
-#cd $CLONE_DIR
-#wget $SNIPS_TOOL_FILE_URL
-#tar -xvf snips-v0.3.6-linux_amd64.tar.gz
-#chmod -R 777 ./snips
-#ls -la "$CLONE_DIR"
-#cp snips /usr/local/bin/snips
-
-# install snips
-#echo "install snips"
-#cd $CLONE_DIR
-#git clone git@github.com:yunify/snips.git
-#glide install
-#make install
-
 
 # snips api-specs to java sdk
 echo " snips api-specs to java sdk"
@@ -92,47 +76,6 @@ snips -f $CLONE_DIR/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t $CLO
 # push  java sdk
 echo "push  java sdk"
 
-ls -la "$CLONE_DIR"
- 
-
-# $TARGET_DIRECTORY is '' by default
-ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/qingcloud-sdk-java/$TARGET_DIRECTORY/"
-
-echo "[+] Deleting $ABSOLUTE_TARGET_DIRECTORY"
-rm -rf "$ABSOLUTE_TARGET_DIRECTORY"
-
-echo "[+] Creating (now empty) $ABSOLUTE_TARGET_DIRECTORY"
-mkdir -p "$ABSOLUTE_TARGET_DIRECTORY"
-
-echo "[+] Listing Current Directory Location"
-ls -al
-
-echo "[+] Listing root Location"
-ls -al /
-
-
-mv "$TEMP_DIR/qingcloud-sdk-java-temp/.git" "$CLONE_DIR/qingcloud-sdk-java/.git"
-
-echo "[+] List contents of $SOURCE_DIRECTORY"
-ls "$SOURCE_DIRECTORY"
-
-echo "[+] Checking if local $SOURCE_DIRECTORY exist"
-if [ ! -d "$SOURCE_DIRECTORY" ]
-then
-	echo "ERROR: $SOURCE_DIRECTORY does not exist"
-	echo "This directory needs to exist when push-to-another-repository is executed"
-	echo
-	echo "In the example it is created by ./build.sh: https://github.com/cpina/push-to-another-repository-example/blob/main/.github/workflows/ci.yml#L19"
-	echo
-	echo "If you want to copy a directory that exist in the source repository"
-	echo "to the target repository: you need to clone the source repository"
-	echo "in a previous step in the same build section. For example using"
-	echo "actions/checkout@v2. See: https://github.com/cpina/push-to-another-repository-example/blob/main/.github/workflows/ci.yml#L16"
-	exit 1
-fi
-
-echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
-cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/qingcloud-sdk-java/$TARGET_DIRECTORY"
 cd "$CLONE_DIR"/qingcloud-sdk-java
 
 echo "add something different"
