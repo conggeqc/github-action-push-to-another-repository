@@ -73,7 +73,7 @@ git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME
 #mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java-temp/.git"
 
 echo "current branch"
-git branch
+cd "$CLONE_DIR"/qingcloud-sdk-java && git branch
 
 
 ls -la "$CLONE_DIR"
