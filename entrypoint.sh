@@ -95,7 +95,8 @@ echo "push  java sdk"
 cd "$CLONE_DIR"/qingcloud-sdk-java
 
 echo "add something different"
-date +%s > report.txt
+#date +%s > report.txt
+date +%c > report.txt
 
 echo "[+] Files that will be pushed"
 ls -la
