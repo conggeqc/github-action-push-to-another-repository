@@ -72,6 +72,9 @@ git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME
 #mkdir "$TEMP_DIR/qingcloud-sdk-java-temp"
 #mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java-temp/.git"
 
+echo "current branch"
+git branch
+
 
 ls -la "$CLONE_DIR"
 
@@ -130,6 +133,8 @@ git config remote.origin.url "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$T
 
 
 #git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+
+echo 'git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"'
 git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
   
 
