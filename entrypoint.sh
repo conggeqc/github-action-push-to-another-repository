@@ -58,10 +58,6 @@ CLONE_DIR=$(mktemp -d)
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
-#git config --global user.name  "conggeqc"
-#git config --global user.email  "conggeqc@gmail.com"
-
-
 
 echo "[+] Cloning destination git repository apispecs java"
 #clone api-specs 
@@ -126,8 +122,8 @@ git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 
-git remote set-url origin "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/conggeqc/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
-git config remote.origin.url "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/conggeqc/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
+git remote set-url origin "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
+git config remote.origin.url "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git"
 
 #echo "cat git config"
 #cat .git/config
