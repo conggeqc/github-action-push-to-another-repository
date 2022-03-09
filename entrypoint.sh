@@ -38,7 +38,6 @@ CLONE_DIR=$(mktemp -d)
 
 TEMP_DIR=$(mktemp -d)
 
-echo "[+] Cloning destination git repository $DESTINATION_REPOSITORY_NAME"
 # Setup git
 #git config --global user.email "$USER_EMAIL"
 #git config --global user.name "$USER_NAME"
@@ -48,7 +47,7 @@ git config --global user.email  "conggeqc@gmail.com"
 
 
 
-
+echo "[+] Cloning destination git repository apispecs java"
 #clone api-specs 
 #echo "clone api-specs" 
 git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://conggeqc:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
