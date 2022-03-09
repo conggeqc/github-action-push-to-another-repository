@@ -66,12 +66,12 @@ git config --global user.name "$USER_NAME"
 echo "[+] Cloning destination git repository apispecs java"
 #clone api-specs 
 #echo "clone api-specs" 
-git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
+git clone --single-branch --branch "$TARGET_BRANCH_API_SPECS" "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_API_SPECS/$TARGET_REPOSITORY_NAME_API_SPECS.git" "$CLONE_DIR"/qingcloud-api-specs
 ls -la "$CLONE_DIR"
 
 #clone  java sdk (DESTINATION)
 echo "clone  java sdk"
-git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" "$CLONE_DIR"/qingcloud-sdk-java
+git clone --single-branch --branch "$TARGET_BRANCH_JAVA_SDK" "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" "$CLONE_DIR"/qingcloud-sdk-java
 #ls -la $CLONE_DIR/qingcloud-sdk-java/.git/
 #mkdir "$TEMP_DIR/qingcloud-sdk-java-temp"
 #mv "$CLONE_DIR/qingcloud-sdk-java/.git" "$TEMP_DIR/qingcloud-sdk-java-temp/.git"
@@ -105,7 +105,7 @@ cat .git/config
 
 #git config --system --unset credential.helper
 
-ORIGIN_COMMIT="https://$GITHUB_SERVER/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
+ORIGIN_COMMIT="https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 COMMIT_MESSAGE="${COMMIT_MESSAGE/ORIGIN_COMMIT/$ORIGIN_COMMIT}"
 COMMIT_MESSAGE="${COMMIT_MESSAGE/\$GITHUB_REF/$GITHUB_REF}"
 
@@ -130,7 +130,7 @@ git config remote.origin.url "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/co
 #cat .git/config
 
 
-#git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
-git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+#git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/$TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
+git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/$TARGET_GITHUB_USERNAME_JAVA_SDK/TARGET_REPOSITORY_NAME_JAVA_SDK.git" --set-upstream "$TARGET_BRANCH_JAVA_SDK"
   
 
